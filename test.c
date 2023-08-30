@@ -3,13 +3,13 @@
 //one hundred dollars buy one hundred chicken
 void buyChicken()
 {
-	printf("��Ԫ��ټ�,����5Ԫ/ֻ��ĸ��3Ԫ/ֻ��С��1Ԫ/3ֻ\n");
+	printf("ֻint put uo\n");
 	int i, j, k;
 	for (i = 0; i <= 20; i++) {
 		for (j = 0; j <= 33; j++) {
 			for (k = 0; k <= 100; k++) {
 				if (100 == i + j + k && 300 == 15 * i + 9 * j + k * 1) {
-					printf("����;%-4d,ĸ��%-4d,С��%-4d\n", i, j, k);
+					printf("5$=%d,3$=%d,1/3$=%d", i, j, k);
 				}
 			}
 
@@ -24,19 +24,19 @@ void prnRhombus(int len)
 	int i,j;
 	for (i = 0; i < len; i++) {
 			for (j = 0; j < len; j++) {
-				//��������
+				//Odd columns
 				if (len % 2 != 0) {
 					if (((i <= halfLen && (j > halfLen - 1 - i) && (j < halfLen + i + 1))\
 						|| \
 						(i > halfLen && (j >= i - halfLen) && (j < len + halfLen - i)))\
 						&&\
-						((j+i) % 2 != 0))//���Ӵ�λ������
+						((j+i) % 2 != 0))
 						printf("%2c",42);
 
 					else
 						printf("  ");
 				}
-				//ż������
+				//Even columns
 				else
 					if ((i <= halfLen && (j >= halfLen - 1 - i) && (j <= halfLen + i))\
 						|| \
@@ -52,19 +52,6 @@ void prnRhombus(int len)
 //find the max or min Number or the second of its in the array 
 void findNum(int *arr, int arrLength, char numType)
 {
-	//sample
-	/*int arr[10]  = { 2,2,2,2,2,2,1,2,0,2};
-	int arr1[10] = { 11,11,11,11,11,11,0,11,11,0 };
-	int arr2[10] = { 11,2,9,3,7,6,8,4,10,5 };
-	int arr3[10] = { 1,8,1,9,0,10,1,0,10,1 };
-
-	int arrlen = sizeof(arr) / sizeof(arr[0]);
-
-	findNum(arr, arrlen, 4);
-	findNum(arr1, arrlen, 4);
-	findNum(arr2, arrlen, 4);
-	findNum(arr3, arrlen, 4);*/
-
 	//variable
 	int maxNum =arr[0];
 	int minNum =arr[0];
