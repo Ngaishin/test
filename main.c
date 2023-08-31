@@ -2,24 +2,19 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define nu 20
-#define sch 95
+#define x 4
+#define y 8
 
 int main(){
 
-    int arr[nu];
-    for(int i=0;i<nu;i++){
-        // srand((unsigned)time(NULL));
-        // arr[i]=rand()%100+1;
-        arr[i]=rand()%100+1;
-        printf("%-4d",arr[i]);
-    } 
-    putchar(10);
+    // int arr[nu];
+    // for(int i=0;i<nu;i++){
+    //     srand((unsigned)time(NULL));
+    //     printf("%-4d",arr[i]);
+    // } 
 
-    selSort(arr,nu);
-    binSearch(arr,nu,sch);
+    Mh(x,y);
 
-    putchar(10);
 
     //system("pause");
     return 0;

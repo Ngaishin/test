@@ -25,3 +25,5 @@ void selSort(int *arr,int arrLen);
 
 //Binary search
 void binSearch(int *arr,int arrLen,int sch);
+
+void Mh(double x,double y);
