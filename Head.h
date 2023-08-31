@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 //number of daffodils
 void flower(int n, int m);
@@ -27,3 +28,6 @@ void selSort(int *arr,int arrLen);
 void binSearch(int *arr,int arrLen,int sch);
 
 void Mh(double x,double y);
+
+//Three stars appear
+void tChess(int sidelength,int quantity);

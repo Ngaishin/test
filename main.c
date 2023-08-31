@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define x 4
-#define y 8
+#define x 10
+#define y 40
 
 int main(){
 
@@ -13,7 +13,7 @@ int main(){
     //     printf("%-4d",arr[i]);
     // } 
 
-    Mh(x,y);
+    tChess(x,y);
 
 
     //system("pause");
