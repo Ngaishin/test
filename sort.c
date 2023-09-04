@@ -1,5 +1,21 @@
 #include "Head.h"
 
+//randArray
+void initRandArray(int *arr,int arrLen)
+{
+    srand(time(NULL));
+    for(int i=0;i<arrLen;i++)
+        arr[i]=rand()%100;
+}
+
+//printArray
+void printArray(int *arr,int arrLen)
+{
+    for(int i=0;i<arrLen;i++)
+        printf("%-4d ",arr[i]);
+    printf("\n");
+}
+
 //selection sort
 void selSort(int *arr,int arrLen)
 {
@@ -17,7 +33,7 @@ void selSort(int *arr,int arrLen)
         }   
     }
     for(i=0;i<arrLen;i++){
-        printf("%-4d",arr[i]);
+        printf("%-4d",*arr++);
     }
     putchar(10);
 }
