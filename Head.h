@@ -42,3 +42,10 @@ void test2();
 
 //alloc
 void alloc(int *p,int quantity,char type);
+
+//votes
+typedef struct _character{
+    char name[20];
+    int votes;
+}Character;
+void vote(Character *vArr,int members,int votes);
