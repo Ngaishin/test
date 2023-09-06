@@ -3,17 +3,27 @@
 #define x 10
 #define y 20
 #define nu 15
+//
+typedef struct _stu{
+    char name[13];
+    int age;
+}Stu;
 
-
+typedef union _dtu{
+    char name[9];
+    short score;
+    int age;
+}Dtu;
 
 int main(){
 
-    //Character vArr[]={{"zhangsan",0},{"lisi",0},{"wangwu",0},{"laoliu",0},{"saqi",0}};
-    Character vArr[]={{"1",0},{"2",0},{"3",0},{"4",0},{"5",0},
-                        {"6",0},{"7",0},{"8",0},{"9",0},{"0",0}};
-
-    vote(vArr,sizeof(vArr)/sizeof(vArr[0]),12);
-
+    Stu s1={'A',10};
+    Dtu d1={.name="G",.score=95};
+    printf("s1.name =%#x ,s1.score=%#x\n",&s1.name,&s1.age);
+    printf("d1.name =%#x ,d1.score=%#x\n",&d1.name,&d1.score);
+    printf("\nsizeof : s1= %d\n",sizeof(Stu));
+    printf("\nsizeof : d1= %d\n",sizeof(Dtu));
+    printf("d1.name= %s,d1.score=%#x,d1.age=%#x\n",d1.name,d1.score);
     //system("pause");
     return 0;
 }
