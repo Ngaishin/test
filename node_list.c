@@ -63,7 +63,7 @@ void insertNode_t(pNode *head,int data){
 void printList(pNode *head){
     pNode cursor = *head;
     while (cursor != NULL) {
-        printf("%-3d", cursor->data);
+        printf("%d ", cursor->data);
         cursor = cursor->next;
     }
     putchar('\n');
@@ -72,7 +72,7 @@ void printList(pNode *head){
 //free list
 void freeList(pNode *head) {
     if (*head == NULL) {
-        printf("h List is empty\n");
+        printf("The List is empty\n");
         return;
     }
     pNode current = *head;
@@ -83,6 +83,93 @@ void freeList(pNode *head) {
         free(current);
         current = next;
     }
-    printf("head = %#x\n",next->data);
+}
+#if 0
+//creatlist tail_insert
+pNode createList_t(){
+    pNode head = (pNode)malloc(sizeof(Node));
+    if(NULL==head){
+        exit(-1);
+    }
+    
+    pNode temp=head,cur;
+    int nodeData;
+
+    scanf("%d",&nodeData);
+    while(nodeData){
+        cur = (pNode)malloc(sizeof(Node));
+        if(NULL==cur)
+            exit(-1);
+        cur->data=nodeData;
+        temp->next=cur;
+        temp=cur;
+        scanf("%d",&nodeData);
+    }
+    temp->next=NULL;
+
+    return head;
+}
+#endif
+
+//insert node at the head
+void insertNode_h_input(pNode *head){
+    //creat new node 
+    pNode p;
+    int nodeData;
+    scanf("%d",&nodeData);
+    while(nodeData){
+        p = (pNode)malloc(sizeof(Node));
+        //Handle memory allocation failure
+        if(NULL==p){
+            printf("Memory allocation failure\n");
+            exit(0);
+        }
+        //Determine wherher the head node is NULL
+        if(NULL==*head){
+            *head=p;
+            p->data=nodeData;
+            p->next=NULL;
+        }
+        else{
+            p->data=nodeData;
+            p->next=*head;
+            *head=p;
+        }
+        scanf("%d",&nodeData);
+    }
+    printf("Input complete\n");
+}
+    
+
+//insert node at the tail by inputting
+void insertNode_t_input(pNode *head){
+    //creat new node
+    pNode p;
+    int nodeData;
+    //input num
+    scanf("%d",&nodeData);
+    while(nodeData){
+        p = (pNode)malloc(sizeof(Node));
+        //Handle memory allocation failure;
+        if(NULL==p){
+            printf("Memory allocation failure\n");
+            exit(-1);
+        }
+        p->data = nodeData;
+        p->next = NULL;
+        //Determine whether the head node is NULL
+        if(NULL==*head){
+            *head = p;
+        }    
+        else{
+            pNode cursor=*head;
+            while(cursor->next){
+                cursor=cursor->next;
+            }
+            cursor->next = p;
+        }
+        scanf("%d",&nodeData);
+    }
+    printf("Input complete\n");
 
 }

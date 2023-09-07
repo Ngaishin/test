@@ -59,3 +59,6 @@ void insertNode_h(pNode *head,int data);
 void insertNode_t(pNode *head,int data);
 void printList(pNode *head);
 void freeList(pNode *head);
+//pNode createList_t();
+void insertNode_h_input(pNode *head);
+void insertNode_t_input(pNode *head);
