@@ -49,3 +49,13 @@ typedef struct _character{
     int votes;
 }Character;
 void vote(Character *vArr,int members,int votes);
+
+//node_list
+typedef struct _node{
+    int data;
+    struct _node *next;
+}Node,*pNode;
+void insertNode_h(pNode *head,int data);
+void insertNode_t(pNode *head,int data);
+void printList(pNode *head);
+void freeList(pNode *head);
