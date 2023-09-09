@@ -1,0 +1,14 @@
+--Method 1
+git config --global --unset http.proxy
+
+
+--Method 2
+//Configure the proxy separately for Git
+git config --global http.proxy http://127.0.0.1:7890
+git config --global https.proxy http://127.0.0.1:7890
+
+//View and modify Git configuration:
+git config --global --edit
+
+//Turn off SSL certificate verification:
+git config --global http.sslVerify false
