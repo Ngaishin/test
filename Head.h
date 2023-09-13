@@ -1,3 +1,6 @@
+#ifndef HEAD_H
+#define HEAD_H
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -63,3 +66,11 @@ void freeList(pNode *head);
 void insertNode_h_input(pNode *head);
 void insertNode_t_input(pNode *head);
 pNode createHeadNode();
+
+//list sort
+int listLen(pNode head);
+void popSort_d(pNode head);
+void popSort_p(pNode head);
+
+
+#endif

@@ -177,7 +177,7 @@ void insertNode_t_input(pNode *head){
 //creat head node
 pNode createHeadNode(){
     pNode head = (pNode)malloc(sizeof(Node));
-    head -> data = NULL;
+    head -> data = 0;
     head ->next=NULL;
     return head;
 }
