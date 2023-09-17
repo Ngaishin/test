@@ -11,7 +11,7 @@
 pNode head=NULL;
 #endif
 
-//insert node at the head
+//Head insertion method
 void insertNode_h(pNode *head,int data){
     //creat new node 
     pNode p = (pNode)malloc(sizeof(Node));

@@ -70,7 +70,7 @@ pNode createHeadNode();
 //list sort
 int listLen(pNode head);
 void popSort_d(pNode head);
-void popSort_p(pNode head);
+void popSort_p(pNode *head);
 
 
 #endif

@@ -19,7 +19,7 @@ void popSort_d(pNode head){
     for(int i=0;i<len-1;i++){
         head1 = head;
         for(int j=0;j<len-i-1;j++){
-            if(head1->data> head1->next->data){
+            if(head1->data< head1->next->data){
                 tmp = head1->data;
                 head1->data = head1->next->data;
                 head1->next->data = tmp;
@@ -30,41 +30,33 @@ void popSort_d(pNode head){
 }
 
 //POP sort pointer
-void popSort_p(pNode head){
-    int len = listLen(head);
-    // if(len<=1) return;
-    // else if(len==2&&head->data>head->next->data){
-    //     pNode tmp = head->next;
-    //     head->next=head;
-    //     head->next=tmp;
-    //     return;
-    // }
-    // else if (len==2&&head->next->data>=head->data)
-    // {
-    //     return;
-    // }
+void popSort_p(pNode *head){
+    int len = listLen(*head);
     
-    pNode pre,cursor,current,tmp;
-    pre=head;
+    pNode pre,cursor,current;
+    pNode phead ;
+    phead->next=*head;
     for(int i=0;i<len-1;i++){
-        current=head;
+        pre=phead;
+        current=phead->next;
+        cursor=current->next;
         for(int j=0;j<len-i-1;j++){
-            if((current->data > current->next->data)){
-                cursor=current->next;
-                pre->next=cursor; 
+            if((current->data > cursor->data)){
+                pre->next = cursor;
                 current->next=cursor->next;
                 cursor->next=current; 
+                
+                pre=cursor;
+                cursor=current->next;
+                continue;
 
-                tmp=current;
-                current=cursor;
-                cursor=tmp;   
             }
-            if(0==j){
-                head=current;
-            }
-            pre=current;
+            pre=pre->next;
             current=current->next;
+            cursor=cursor->next;
             
         }           
     }    
+    *head=phead->next;
+    return;
 }
